@@ -5,6 +5,7 @@
 # Create another class and typecheck
 
 class Book:
+    BOOKTYPE = ("HARDCOVER", "PAPERBACK", "EBOOK")
     
     def __init__(self, title, price, pages):
         self.title = title
@@ -12,7 +13,13 @@ class Book:
         self.pages = pages
         
     def getprice(self):
-        return self.price
+        if hasattr(self, "_discount"):
+            return self.price * (1 - self._discount)
+        else:
+            return self.price
+    
+    def setdiscount(self, amount):
+        self._discount = amount
 
 print(Book)
 
@@ -30,3 +37,10 @@ print(b1.getprice())
 prc1 = b1.getprice
 print(type(prc1))
 
+print(isinstance(prc1, object))
+
+print(b1.getprice())
+b1.setdiscount(0.3)
+print(b1.getprice())
+
+print(Book.BOOKTYPE)
