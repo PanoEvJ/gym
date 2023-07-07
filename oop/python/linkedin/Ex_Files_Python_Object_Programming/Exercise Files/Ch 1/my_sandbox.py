@@ -20,6 +20,10 @@ class Book:
     
     def setdiscount(self, amount):
         self._discount = amount
+        
+    @classmethod
+    def getbooktypes(cls):
+        return Book.BOOKTYPE
 
 print(Book)
 
@@ -44,3 +48,5 @@ b1.setdiscount(0.3)
 print(b1.getprice())
 
 print(Book.BOOKTYPE)
+print("Book types: ", Book.getbooktypes())
+
