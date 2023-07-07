@@ -7,6 +7,8 @@
 class Book:
     BOOKTYPE = ("HARDCOVER", "PAPERBACK", "EBOOK")
     
+    __booklist = None
+    
     def __init__(self, title, price, pages):
         self.title = title
         self.price = price
@@ -24,10 +26,17 @@ class Book:
     @classmethod
     def getbooktypes(cls):
         return Book.BOOKTYPE
-
+    
+    @staticmethod
+    def getbooklist():
+        if ( Book.__booklist == None):
+            Book.__booklist = []
+        return  Book.__booklist
+    
 print(Book)
 
 b1 = Book("The Jitterbug Perfume", 23, 304)
+b2 = Book("The Master and Margarita", 14, 255)
 
 print(b1)
 print(type(b1))
@@ -50,3 +59,15 @@ print(b1.getprice())
 print(Book.BOOKTYPE)
 print("Book types: ", Book.getbooktypes())
 
+thebooks = Book.getbooklist()
+thebooks.append(b1)
+thebooks.append(b2)
+print(thebooks)
+
+
+
+for i in thebooks:
+    print(i.title)
+    
+reloadbooklist = Book.getbooklist()
+print(reloadbooklist)
