@@ -28,6 +28,9 @@ class Book:
         # return (self.price < value.price)
         return not Book.__ge__(self, value)
     
+    # def __str__(self):
+        # return f"book {self.title}"
+    
 b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
 b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
 b3 = Book("War and Peace", "Leo Tolstoy", 39.95)
@@ -44,3 +47,6 @@ print(b2 < b3)
 
 
 # TODO: Now we can sort them too
+books = [b1, b2, b3, b4]
+books.sort()
+print([book.title for book in books])
