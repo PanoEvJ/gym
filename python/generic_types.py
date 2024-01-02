@@ -12,7 +12,8 @@ def process_elements(elements: list[T]) -> list[T]:
 
 
 def main():
-    print(process_numbers([1, 2, 3]))
+    my_list = [1, 2, 3, 4, 5]
+    print(process_numbers(numbers=my_list))
 
 
 if __name__ == "__main__":
