@@ -13,7 +13,8 @@ def process_elements(elements: list[T]) -> list[T]:
 
 def main():
     my_list = [1, 2, 3, 4, 5]
-    print(process_numbers(numbers=my_list))
+    processed = process_elements(elements=my_list)
+    print(processed)
 
 
 if __name__ == "__main__":
