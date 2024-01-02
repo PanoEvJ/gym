@@ -1,9 +1,9 @@
-from typing import Any, TypeVar
+from typing import TypeVar
 
 T = TypeVar("T")
 
 
-def process_elements(elements: list[Any]) -> list[Any]:
+def process_elements(elements: list[T]) -> list[T]:
     return [element for index, element in enumerate(elements) if index % 2 == 1]
 
 
