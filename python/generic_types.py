@@ -16,6 +16,10 @@ def main():
     processed = process_elements(elements=my_list)
     print(processed)
 
+    my_str_list = ["a", "b", "c", "d", "e"]
+    processed = process_elements(elements=my_str_list)
+    print(processed)
+
 
 if __name__ == "__main__":
     main()
