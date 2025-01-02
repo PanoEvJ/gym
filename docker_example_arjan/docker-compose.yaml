@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: channel-api
+    command: uvicorn app:app --host 0.0.0.0 --port 8080 --reload
+    ports:
+      - 8080:8080
+    # restart: always
+    volumes:
+      - .:/app
+    working_dir: /app
